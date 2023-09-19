@@ -1,0 +1,114 @@
+/* Extra small devices ( <= 320px ) */
+@media only screen and (max-width: 340px) {
+  nav {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .logo-font,
+  .hero__title {
+    font-size: 1.5em;
+  }
+
+  .nav-item a,
+  .hero__subtitle,
+  .btn {
+    font-size: 50.5px;
+  }
+
+  .restaurant__menus {
+    flex-direction: column;
+  }
+}
+
+/* Smaller devices ( <= 600px ) */
+@media only screen and (max-width: 600px) {
+  .menu {
+    display: block;
+    background-color: transparent;
+    border: 1px solid transparent;
+    text-align: center;
+  }
+
+  .menu-hp {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0px 1.25em;
+  }
+
+  .menu span {
+    text-align: center;
+  }
+
+  nav {
+    display: flex;
+    padding: 2em 0px;
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  .nav-list {
+    display: none;
+  }
+
+  .nav-item a:hover {
+    color: red;
+    border: none;
+    cursor: pointer;
+  }
+
+  .nav-list-block {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+    border-top: 1px solid #404040;
+    border-bottom: 1px solid #404040;
+  }
+
+  .hero__title {
+    font-size: 38px;
+  }
+  .hero__subtitle {
+    font-size: 16px;
+  }
+
+  .restaurant__menus {
+    flex-direction: column;
+  }
+}
+
+/* Small devices ( >= 600px ) */
+@media only screen and (min-width: 600px) {
+  .main-content__title {
+    margin-bottom: 1em;
+  }
+
+  .card {
+    width: 300px;
+  }
+}
+
+/* Large devices ( >= 992px ) */
+@media only screen and (min-width: 992px) {
+  .card {
+    width: 300px;
+  }
+}
+
+/* Extra large devices ( >= 1200px ) */
+@media only screen and (min-width: 1200px) {
+  .hero__wrapper img {
+    min-width: 1000px;
+  }
+  main {
+    max-width: 1200px;
+  }
+  .card {
+    width: 340px;
+  }
+}
