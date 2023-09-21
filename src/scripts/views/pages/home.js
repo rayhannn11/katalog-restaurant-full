@@ -6,7 +6,11 @@ const Home = {
     return `
     <div class="home">
         <div class="hero__wrapper">
-            <img src="./images/hero/hero-image_2.png" alt="hero__image" />
+            <picture>
+              <source media="(max-width: 600px)" srcset="./images/hero/hero-image_2-small.jpg">
+              <img src='./images/hero/hero-image_2-large.jpg' 
+                  alt="hero__image">
+            </picture>
             <div tabindex="0" class="hero__text">
                 <h1 class="hero__title">Welcome to Katalog Restaurant</h1>
 

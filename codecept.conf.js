@@ -17,6 +17,10 @@ exports.config = {
       show: true,
     },
   },
+  compilerOptions: {
+    module: "commonjs",
+    target: "es6",
+  },
   include: {
     I: "./steps_file.js",
   },

@@ -56,7 +56,7 @@ const createRestaurantItemTemplate = (restaurant) => `
 <div tabindex="0" id="card" class="card">
 <div tabindex="0" class="card-content-rating">⭐${restaurant.rating}</div>
         <div class="img-container">
-            <img tabindex="0" class="card-image" alt="${
+            <img tabindex="0" class="card-image lazyload" alt="${
               restaurant.name
             }" src="${
   restaurant.pictureImg
