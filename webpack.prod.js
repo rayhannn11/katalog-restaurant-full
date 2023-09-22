@@ -1,5 +1,7 @@
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const { merge } = require("webpack-merge");
 const common = require("./webpack.common");
 
@@ -44,11 +46,11 @@ module.exports = merge(common, {
         },
       },
     },
+    minimizer: [new CssMinimizerPlugin(), "..."],
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new BundleAnalyzerPlugin({
-      analyzerMode: "disabled",
-    }),
+    new BundleAnalyzerPlugin({ analyzerMode: "disabled" }),
+    new MiniCssExtractPlugin(),
   ],
 });

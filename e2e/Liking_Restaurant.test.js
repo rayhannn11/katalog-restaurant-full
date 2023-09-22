@@ -11,7 +11,7 @@ Before(({ I }) => {
 const emptyFavoriteRestaurantText = "Empty Favorite Restaurant";
 
 Scenario(
-  "when a user like restaurant without viewing the favorites page",
+  "when a user like restaurant without viewing the favorites page and then delete it",
   async ({ I }) => {
     // User choose restaurant
     I.amOnPage("/");
@@ -29,11 +29,24 @@ Scenario(
     I.seeElement(".card");
     const likedCardTitle = await I.grabTextFrom(".card-content-info");
     assert.strictEqual(firstRestaurantCardTitle, likedCardTitle);
+
+    // delete restaurant
+    I.seeElement(".card a");
+    const firstRestaurantLiked = locate(".card-content-info").first();
+    I.click(firstRestaurantLiked);
+    // Click unlike button
+    I.seeElement("#likeButton");
+    I.click("#likeButton");
+    // check favorite deleted or not
+    I.amOnPage("/#/like");
+    I.seeElement(".content__empty");
+    I.dontSeeElement(".card");
+    I.dontSeeElement(".card-content-info");
   }
 );
 
 Scenario(
-  "when a user like restaurant with viewing the favorites page",
+  "when a user like restaurant with viewing the favorites page and then delete it",
   async ({ I }) => {
     // User go to favorite page
     I.amOnPage("/#/like");
@@ -56,26 +69,18 @@ Scenario(
     I.seeElement(".card");
     const likedCardTitle = await I.grabTextFrom(".card-content-info");
     assert.strictEqual(firstRestaurantCardTitle, likedCardTitle);
+
+    // delete restaurant
+    I.seeElement(".card a");
+    const firstRestaurantLiked = locate(".card-content-info").first();
+    I.click(firstRestaurantLiked);
+    // Click unlike button
+    I.seeElement("#likeButton");
+    I.click("#likeButton");
+    // check favorite deleted or not
+    I.amOnPage("/#/like");
+    I.seeElement(".content__empty");
+    I.dontSeeElement(".card");
+    I.dontSeeElement(".card-content-info");
   }
 );
-
-Scenario("when a user unlike restaurant", async ({ I }) => {
-  // Like some favorite restaurant
-  I.amOnPage("/#/detail/rqdv5juczeskfw1e867");
-  I.seeElement("#likeButton");
-  I.click("#likeButton");
-
-  // Unlike restaurant
-  I.amOnPage("/#/like");
-  I.seeElement(".card a");
-  const firstRestaurantLiked = locate(".card-content-info").first();
-  I.click(firstRestaurantLiked);
-  // Click unlike button
-  I.seeElement("#likeButton");
-  I.click("#likeButton");
-  // check favorite deleted or not
-  I.amOnPage("/#/like");
-  I.seeElement(".content__empty");
-  I.dontSeeElement(".card");
-  I.dontSeeElement(".card-content-info");
-});

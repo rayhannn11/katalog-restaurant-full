@@ -9,7 +9,7 @@
     "build-image": "node sharp.js",
     "lint": "eslint ./src",
     "test": "jest",
-    "e2e": "codeceptjs run --steps"
+    "e2e": "codeceptjs run --steps "
   },
   "keywords": [],
   "author": "f009yb361@dicoding.org",
@@ -25,6 +25,7 @@
     "codeceptjs": "^3.5.4",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
+    "css-minimizer-webpack-plugin": "^5.0.1",
     "eslint": "^8.49.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.28.1",
@@ -44,6 +45,7 @@
     "karma-jasmine": "^4.0.2",
     "karma-sourcemap-loader": "^0.3.8",
     "karma-webpack": "^5.0.0",
+    "mini-css-extract-plugin": "^2.7.6",
     "playwright": "^1.38.0",
     "sharp": "^0.32.6",
     "style-loader": "^3.3.1",
